@@ -1,19 +1,28 @@
 import React from 'react';
-import products from '../mockProducts.json';
+// import products from '../mockProducts.json';
 
-const getAllProducts = () => {
-  return products;
-}
+// const getAllProducts = () => {
+//   return products;
+// }
+export default class SelectProduct extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {products: []};
+  }
 
-const SelectProduct = () => {
-  const products = getAllProducts();
+  componentDidMount() {
+    fetch('/api/products')
+        .then(( results ) => this.setState({ products: results }));
+    console.log('products', this.state.products)    
+  }
 
-  return (
+  render() {
+    return (
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">Select Product</h5>
         <p className="card-text">Pick the plastic product you have used recently to log and check the environmental impact.</p>
-        {products.map(product =>
+        {this.state.products.map(product =>
           <a 
             href={`/facts/${product.productId}`}
             className="btn btn-primary"
@@ -24,8 +33,9 @@ const SelectProduct = () => {
       </div>
     </div>
   )
+ }
 };
 
-export default SelectProduct;
+// export default SelectProduct;
 
 
