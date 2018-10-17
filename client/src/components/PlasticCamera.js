@@ -8,6 +8,7 @@ export default class PlasticCamera extends Component {
     super()
     this.state = {
       capturedPhoto: undefined,
+      product: null,
     }
   } 
 
@@ -17,6 +18,7 @@ export default class PlasticCamera extends Component {
       this.img.src = URL.createObjectURL(blob);
       this.setState({capturedPhoto: this.img.src });
     })
+    .catch(err=> console.log(err))
   }
 
   render() {
@@ -42,6 +44,13 @@ export default class PlasticCamera extends Component {
         { this.state.capturedPhoto ? 
         <Link to="/" className="btn btn-primary">
           Happy with your photo?
+        </Link>
+        : ''
+        }
+
+        { this.state.product ? 
+        <Link  to={`/facts/${this.state.product.id}`} className="btn btn-primary">
+          This is a {this.state.product}
         </Link>
         : ''
         }
