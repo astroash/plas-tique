@@ -1,5 +1,12 @@
 module.exports =  function(req, res, next) {
 
+	if (req.method === 'POST') {
+       collectRequestData(req, result => {
+           console.log(result);
+           res.send(result.body)
+           res.end(`Parsed data belonging to ${result.fname}`);
+       });
+   }
 	/**
 	 * TODO(developer): Uncomment the following lines before running the sample.
 	 */
@@ -58,3 +65,19 @@ async function uploadFile(bucketName, filename) {
 
 	console.log(`${filename} uploaded to ${bucketName}.`);
 };
+
+function collectRequestData(request, callback) {
+   const FORM_URLENCODED = 'application/x-www-form-urlencoded';
+   if(request.headers['content-type'] === FORM_URLENCODED) {
+       let body = '';
+       request.on('data', chunk => {
+           body += chunk.toString();
+       });
+       request.on('end', () => {
+           callback(parse(body));
+       });
+   }
+   else {
+       callback(null);
+   }
+}
