@@ -7,7 +7,7 @@ module.exports =  function(req, res, next) {
 	// Creates a client
 	const client = new vision.ImageAnnotatorClient();
 
-	// var topresult;
+	var topresult;
 
 	// Performs label detection on the image file
 	client
@@ -17,7 +17,8 @@ module.exports =  function(req, res, next) {
 
 	    console.log('Labels:');
 	    labels.forEach(label => console.log(label.description));
-	    topresult => labels[0].description;
+	    console.log(labels[0])
+	    topresult = labels[0].description;
 	  })
 	  .catch(err => {
 	    console.error('ERROR:', err);
