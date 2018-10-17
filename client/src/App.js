@@ -5,6 +5,7 @@ import './App.css';
 import SelectProduct from './components/SelectProduct';
 import Facts from './components/Facts';
 import Alternatives from './components/Alternatives';
+import PlasticCamera from './components/PlasticCamera'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route exact path="/" component={SelectProduct} />
           <Route path="/facts/:id" component={Facts} />
           <Route path="/alternatives/:id" component={Alternatives} />
+          <Route exact path="/camera" component={PlasticCamera} />
         </div>
       </Router>
     );

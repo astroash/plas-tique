@@ -1,13 +1,20 @@
 const { Pool } = require('pg');
+const url = require('url');
+
+const params = url.parse(process.env.DB_URL);
+const [username, password] = params.auth.split(':');
 
 const options = {
+  host: params.hostname,
+  port: params.port,
+  database: params.pathname.split('/')[1],
   max: process.env.DB_MAX_CONNECTIONS || 2,
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.PGPORT,
-}
+  user: username,
+  password: password,
+};
+
+console.log(options);
+
 
 options.ssl = options.host !== 'localhost';
 
