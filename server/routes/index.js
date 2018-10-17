@@ -7,9 +7,9 @@ const usersId = require('./users_id')
 
 /* GET home page. */
 router.use('/find', find);
+router.use('/products/:id', productsId);
 router.use('/products', products);
-router.use('/products/{id}', productsId);
+router.use('/users/:id', usersId);
 router.use('/users', users);
-router.use('/users/{id}', usersId);
 
 module.exports = router;
