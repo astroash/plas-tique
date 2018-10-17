@@ -4,7 +4,7 @@ module.exports =  function(req, res, next) {
 	 * TODO(developer): Uncomment the following lines before running the sample.
 	 */
 	const bucketName = 'plas-tique-images';
-	const filename = 'gs://bucket-name-123/demo-image.jpg'; //file;
+	const filename = 'gs://plas-tique-images/demo-image.jpg'; //file;
 	uploadFile(bucketName, filename)
 
 	// Imports the Google Cloud client library
