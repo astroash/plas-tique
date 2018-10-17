@@ -29,7 +29,7 @@ res
   weight: number,
   lifeSpan: number,
   recyclable: boolean,
-  alternativeProduct: string [],
+  alternativeProduct: string (URL),
   recommendations: string []
 }
 ```
