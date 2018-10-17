@@ -10,10 +10,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
+          <h1>Plas-tique</h1>
+          <h4>Critique your plastic usage</h4>
           <Route exact path="/" component={SelectProduct} />
-          <Route path="/facts" component={Facts} />
-          <Route path="/alternatives" component={Alternatives} />
+          <Route path="/facts/:id" component={Facts} />
+          <Route path="/alternatives/:id" component={Alternatives} />
         </div>
       </Router>
     );

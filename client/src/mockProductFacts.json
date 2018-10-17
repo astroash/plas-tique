@@ -1,0 +1,20 @@
+{
+  "1": {
+    "productName": "Waterbottle",
+    "plasticType": "polyethylene terephthalate (PET)",
+    "weight": 20,
+    "lifeSpan": 200,
+    "recyclable": true,
+    "alternativeProduct": "https://images-na.ssl-images-amazon.com/images/I/51R1ZSE40KL._SY355_.jpg",
+    "recommendations": ["Replace your plastic bottle with an aluminium flask"]
+  },
+  "2": {
+    "productName": "Coffee cup",
+    "plasticType": "polyethylene terephthalate (PET)",
+    "weight": 10,
+    "lifeSpan": 100,
+    "recyclable": false,
+    "alternativeProduct": "https://metrouk2.files.wordpress.com/2018/01/keepcup-e1515596761768.jpg?w=620&h=373&crop=1",
+    "recommendations": ["Take a reusable coffee cup"]
+  }
+}

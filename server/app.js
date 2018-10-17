@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const app = express();
+
+require('dotenv').config()
 
 const indexRouter = require('./routes/index');
-
-const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
