@@ -25,7 +25,7 @@ export default class Facts extends React.Component {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">Facts about {this.state.product.productName}s</h5>
+        <h5 className="card-title">Facts about {this.state.product.productName}</h5>
         <p className="card-text"><b>{this.state.product.weight}g plastic</b></p>
         <p className="card-text">Takes <b>{this.state.product.lifeSpan} years</b> to biodegrade</p>
         <Link to={`/alternatives/${this.state.productId}`} className="btn btn-primary">

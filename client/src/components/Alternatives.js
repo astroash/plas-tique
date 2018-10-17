@@ -22,7 +22,7 @@ export default class Alternatives extends React.Component {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">Alternatives to {this.state.product.productName}s</h5>
+        <h5 className="card-title">Alternatives to {this.state.product.productName}</h5>
         {
           this.state.product ? this.state.product.recommendations.map((recommendation, index) => 
           <p key={index}
