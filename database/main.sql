@@ -53,3 +53,5 @@ insert into users (id, name, daily_goal)
 values (111,'Olivia Garcia',50),
 (112,'Lulu Jojes',100),
 (113,'Helena Murret',80);
+
+COMMIT;
