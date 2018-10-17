@@ -17,7 +17,7 @@ res
 {
   productId: number, 
   productName: string,
-} [] ...
+} []
 ```
 
 ## `GET /products/:id`
