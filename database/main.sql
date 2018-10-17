@@ -5,17 +5,17 @@ drop table if exists product cascade;
 create table product(
   product_id int,
   product_name varchar(50),
-  image_url varchar(100),
+  image_url varchar(200),
   plastic_type varchar(50),
   amount_of_plastic int,
   time_to_decay int,
   recyclable boolean,
-  alternative_product varchar(100),
-  recommendation_1 varchar(100),
-  recommendation_2 varchar(100)
+  alternative_product varchar(200),
+  recommendation_1 varchar(200),
+  recommendation_2 varchar(200)
 );
 
-insert into product (product_id, product_name, image_url, plastic_type, amount_of_plastic, time_to_decay, recyclable, alternative _product, recommendation_1, recommendation_2)
+insert into product (product_id, product_name, image_url, plastic_type, amount_of_plastic, time_to_decay, recyclable, alternative_product, recommendation_1, recommendation_2)
 values ('1','Plastic bottles','https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/pet_bottle.png','polyethylene terephthalate (PET)','20','10','yes','https://images-na.ssl-images-amazon.com/images/I/51R1ZSE40KL._SY355_.jpg','Consider using a stainless steel bottle','Replace your plastic bottle with a glass bottle'),
 ('2','Plastic cups','https://kwmedia.scdn8.secure.raxcdn.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/7/176259-icon-red-cup-18oz-b1_1.jpg','Polyethylene','10','10','yes','https://metrouk2.files.wordpress.com/2018/01/keepcup-e1515596761768.jpg?w=620&h=373&crop=1','Take a reusable coffee cup','Paper cups are a great alternative'),
 ('3','Straws','https://as2.ftcdn.net/jpg/01/17/10/95/500_F_117109574_LSh5LmL0tOqqW9isdNPZmATVhwzfzJjB.jpg','Polyamides','2','10','no','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTeezPfG7ftUmf4q-oTLaNDs0Q5GuhTx7z1apNjjDTVgHmZXWx','Recyclable Straws make a great alternative','Compostable straws are a great alternative'),
@@ -27,19 +27,19 @@ drop table if exists consumption cascade;
 
 create table consumption(
   user_id int,
-  datetime int,
+  datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   product_id int
 );
 
-insert into consumption (user_id, datetime, product_id)
-values ('111','43390.6300179398','1')
-('111','43391.6300231482','3')
-('111','43392.6300231482','5')
-('112','43393.6300231482','2')
-('112','43394.6300231482','4')
-('112','43395.6300231482','6')
-('112','43396.6300231482','1')
-('113','43397.6300231482','4');
+insert into consumption (user_id, product_id)
+values (111,1),
+(111, 3),
+(111, 5),
+(112, 2),
+(112, 4),
+(112, 6),
+(112, 1),
+(113 ,4);
 
 drop table if exists users cascade;
 
@@ -50,6 +50,6 @@ create table users(
 );
 
 insert into users (id, name, daily_goal)
-values ('111','Olivia Garcia','50')
-('112','Lulu Jojes','100')
-('113','Helena Murret','80');
+values (111,'Olivia Garcia',50),
+(112,'Lulu Jojes',100),
+(113,'Helena Murret',80);
