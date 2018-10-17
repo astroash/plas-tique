@@ -15,7 +15,7 @@ class App extends Component {
           <h4>Critique your plastic usage</h4>
           <Route exact path="/" component={SelectProduct} />
           <Route path="/facts/:id" component={Facts} />
-          <Route path="/alternatives" component={Alternatives} />
+          <Route path="/alternatives/:id" component={Alternatives} />
         </div>
       </Router>
     );
