@@ -9,6 +9,8 @@ module.exports =  function(req, res, next) {
 
 	// Imports the Google Cloud client library
 	const vision = require('@google-cloud/vision');
+	// Imports the Google Cloud client library
+	const {Storage} = require('@google-cloud/storage');
 
 	// Creates a client
 	const client = new vision.ImageAnnotatorClient();
@@ -37,9 +39,6 @@ module.exports =  function(req, res, next) {
 };
 
 async function uploadFile(bucketName, filename) {
-
-	// Imports the Google Cloud client library
-	const {Storage} = require('@google-cloud/storage');
 
 	// Creates a client
 	const storage = new Storage();
