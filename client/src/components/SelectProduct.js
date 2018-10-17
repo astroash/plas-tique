@@ -1,9 +1,5 @@
 import React from 'react';
-// import products from '../mockProducts.json';
 
-// const getAllProducts = () => {
-//   return products;
-// }
 export default class SelectProduct extends React.Component {
   constructor(props) {
     super(props);
@@ -12,8 +8,10 @@ export default class SelectProduct extends React.Component {
 
   componentDidMount() {
     fetch('/api/products')
-        .then(( results ) => this.setState({ products: results }));
-    console.log('products', this.state.products)    
+    .then((res) => 
+        res.json())
+        .then(( results ) => 
+        this.setState({ products: results }));
   }
 
   render() {
@@ -35,7 +33,5 @@ export default class SelectProduct extends React.Component {
   )
  }
 };
-
-// export default SelectProduct;
 
 
