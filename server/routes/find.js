@@ -19,10 +19,12 @@ module.exports =  function(req, res, next) {
 	    labels.forEach(label => console.log(label.description));
 	    console.log(labels[0])
 	    topresult = labels[0].description;
+	    res.send(topresult);
 	  })
 	  .catch(err => {
 	    console.error('ERROR:', err);
+	    res.send('error');
 	  });
 
-    res.send(topresult);
+    // res.send('topresult');
 };
