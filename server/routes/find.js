@@ -1,4 +1,4 @@
-module.exports =  function(req, res, next, file) {
+module.exports =  function(req, res, next) {
 
 	/**
 	 * TODO(developer): Uncomment the following lines before running the sample.
